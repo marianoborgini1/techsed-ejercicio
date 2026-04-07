@@ -1,0 +1,4 @@
+﻿id_pedido;cliente;estado;fecha_entrega;producto;cantidad
+P001;Juan Pérez;En camino;8/3/2026;Cemento 20k;50
+P002;Obra Norte;Pendiente;10/3/2026;Bolsón arena 1t;10
+P003;María López;Entregado;3/3/2026;Bolsón piedra partida 1t;3
