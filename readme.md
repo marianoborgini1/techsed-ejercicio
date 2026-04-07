@@ -92,17 +92,17 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configurar variables de entorno
-Cree un archivo llamado `.env` en la raíz del proyecto y pegue su API Key de Groq:
+Cree un archivo llamado `.env` en la raíz del proyecto y pegue su API Key de Groq [generar API Key gratis GROQ](https://groq.com):
 
 ```env
-GROQ_API_KEY=tu_clave_aqui_gsk_...
+GROQ_API_KEY=tu_clave_aqui
 ```
 
 ### 5. Ejecutar el asistente
 ```bash
 python app.py
 ```
----
+
 ## 📂 Estructura del Proyecto
 
 ```plaintext
