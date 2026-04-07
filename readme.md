@@ -30,37 +30,30 @@ Se desarrolló un script interactivo en Python que actúa como intermediario ent
 * **Despliegue Web/API:** Encapsular la lógica en un framework como Flask o FastAPI para exponer el asistente como un microservicio.
 * **Omnicanalidad:** Conectar el microservicio directamente a la API de WhatsApp Web o integrarlo como un bot en Slack/Teams para el uso interno del equipo.
 
-## 5. Ejemplo de Uso Real
-A continuación, se muestra el flujo de interacción donde la IA cruza correctamente el stock total con los pedidos en tránsito:
+## 5. Ejemplo de Uso Real y Flujo de Proceso
+A continuación, se muestra una captura del sistema funcionando y respondiendo en tiempo real a una consulta de stock:
 
-**Input del usuario:**
-> Ingrese su consulta: decime stock disponible
+![Ejemplo de consola interactiva](static/img/sistema_funcionando.jpg)
 
-**Output del sistema:**
-> ===============================
-> ASISTENTE TECH-SED:
-> El stock disponible es:
-> - Cemento 20k: 150 (200 - 50 pedidos en camino)
-> - Bolsón piedra partida 1t: 42 (45 - 3 entregados)
-> ===============================
+### 🔄 Comparativa de Flujos: Antes vs. Ahora
 
-<pre>
-    graph TD
-        subgraph ANTES [🔴 Proceso Manual Antiguo]
-            A1[Consulta entrante] --&gt; B1(Operario lee mensaje)
-            B1 --&gt; C1(Busca info fragmentada)
-            C1 --&gt; D1(Cruza datos mentalmente)
-            D1 --&gt; E1(Tipea respuesta)
-            E1 --&gt; F1[Demora en responder]
-        end
+```mermaid
+graph TD
+    subgraph ANTES [🔴 Proceso Manual Antiguo]
+        A1([Inicio: Entra WhatsApp]) --> B1[Operario lee consulta]
+        B1 --> C1[Operario busca en ERP/Excel]
+        C1 --> D1[Operario tipea respuesta cruzando datos]
+        D1 --> E1([Fin: Mensaje enviado - Tiempo Alto])
+    end
 
-        subgraph AHORA [🟢 Proceso Automatizado con IA]
-            A2[Consulta entrante] --&gt; B2(Sistema capta el input)
-            B2 --&gt; C2{IA Llama 3.3}
-            C2 -- Lee CSVs y calcula --&gt; D2(Genera respuesta)
-            D2 --&gt; E2[Respuesta al instante]
-        end
-        
-        style ANTES fill:#ffe6e6,stroke:#ff6666
-        style AHORA fill:#e6ffe6,stroke:#66cc66
-</pre>
+    subgraph AHORA [🟢 Proceso Automatizado con IA]
+        A2([Inicio: Entra WhatsApp]) --> B2[Sistema lee consulta]
+        B2 --> C2[(Consulta y cruce en CSVs)]
+        C2 --> D2[IA redacta respuesta final]
+        D2 --> E2([Fin: Mensaje enviado - Tiempo Bajo])
+    end
+    
+    ANTES ~~~ AHORA
+    
+    style ANTES fill:#ffe6e6,stroke:#ff6666
+    style AHORA fill:#e6ffe6,stroke:#66cc66
