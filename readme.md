@@ -49,8 +49,8 @@ graph TD
     subgraph AHORA [🟢 Proceso Automatizado con IA]
         A2([Inicio: Mensaje Recibido]) --> B2[Lectura automática del sistema]
         B2 --> C2[Cruce lógico de información]
-        C2 <--> DB[(Archivos CSV)]
-        C2 --> D2[Redacción automatizada por IA]
+        C2 --> DB[(Archivos CSV)]
+        DB --> D2[Redacción automatizada por IA]
         D2 --> E2([Fin: Respuesta enviada - Tiempo Bajo])
     end
     
