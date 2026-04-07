@@ -59,3 +59,59 @@ graph TD
     style ANTES fill:#ffe6e6,stroke:#ff6666
     style AHORA fill:#e6ffe6,stroke:#66cc66
 ```
+
+## 🛠️ Instalación y Ejecución
+
+Para testear esta POC en un entorno local, siga estos pasos:
+
+### 1. Clonar el repositorio
+Abra una terminal y ejecute:
+```bash
+git clone https://github.com/marianoborgini1/techsed-ejercicio.git
+cd techsed-ejercicio
+```
+
+### 2. Configurar el entorno virtual (Recomendado)
+Para mantener las dependencias aisladas:
+
+```bash
+# Crear el entorno
+python -m venv venv
+
+# Activar el entorno
+# En Windows:
+.\venv\Scripts\activate
+
+# En Mac/Linux:
+source venv/bin/activate
+```
+
+### 3. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configurar variables de entorno
+Cree un archivo llamado `.env` en la raíz del proyecto y pegue su API Key de Groq:
+
+```env
+GROQ_API_KEY=tu_clave_aqui_gsk_...
+```
+
+### 5. Ejecutar el asistente
+```bash
+python app.py
+```
+---
+## 📂 Estructura del Proyecto
+
+```plaintext
+techsed-ejercicio/
+├── data/               # Archivos CSV con la base de datos simulada
+├── static/img/         # Capturas de pantalla para la documentación
+├── .env                # Variables de entorno (no incluido en el repo)
+├── .gitignore          # Archivos excluidos de Git
+├── app.py              # Script principal con la lógica e interfaz ANSI
+├── README.md           # Documentación técnica y funcional
+└── requirements.txt    # Librerías necesarias (Pandas, Requests, Dotenv)
+```
