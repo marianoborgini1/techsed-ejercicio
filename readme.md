@@ -40,19 +40,21 @@ A continuación, se muestra una captura del sistema funcionando y respondiendo e
 ```mermaid
 graph TD
     subgraph ANTES [🔴 Proceso Manual Antiguo]
-        A1([Inicio: Mensaje]) --> B1[Lectura manual<br>de consulta]
-        B1 --> C1[Búsqueda en<br>ERP / Excel]
-        C1 --> D1[Redacción<br>de respuesta]
-        D1 --> E1([Fin: Tiempo Alto])
+        A1([Inicio: Mensaje Recibido]) --> B1[Lectura manual de consulta]
+        B1 --> C1[Búsqueda de datos en ERP/Excel]
+        C1 --> D1[Redacción de respuesta]
+        D1 --> E1([Fin: Respuesta enviada - Tiempo Alto])
     end
 
     subgraph AHORA [🟢 Proceso Automatizado con IA]
-        A2([Inicio: Mensaje]) --> B2[Lectura automática<br>del sistema]
-        B2 --> C2[Cruce lógico<br>de información]
+        A2([Inicio: Mensaje Recibido]) --> B2[Lectura automática del sistema]
+        B2 --> C2[Cruce lógico de información]
         C2 --> DB[(Archivos CSV)]
-        DB --> D2[Redacción<br>automatizada IA]
-        D2 --> E2([Fin: Tiempo Bajo])
+        DB --> D2[Redacción automatizada por IA]
+        D2 --> E2([Fin: Respuesta enviada - Tiempo Bajo])
     end
+    
+    ANTES ~~~ AHORA
     
     style ANTES fill:#ffe6e6,stroke:#ff6666
     style AHORA fill:#e6ffe6,stroke:#66cc66
